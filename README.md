@@ -19,7 +19,11 @@ $ chmod +x sprayitfwd.sh
 
 ## Usage
 ```shell
-$ ./sprayitfwd.sh
+$ ./sprayitfwd.sh 
+Summer24
+Summer2024
+Summer24!
+Summer2024!
 Autumn24
 Autumn2024
 Autumn24!
@@ -28,11 +32,7 @@ Fall24
 Fall2024
 Fall24!
 Fall2024!
-Summer24
-Summer2024
-Summer24!
-Summer2024!
 ```
 # Potential improvements
-- [ ] Ouput list in order of likelihood
+- [X] Output list in order of likelihood
 - [ ] Add parameters to customize the output

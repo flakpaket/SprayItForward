@@ -46,21 +46,23 @@ generate_passwords() {
     echo "${SEASON}${YEAR}!"
 }
 
-# Generate passwords for the current season
-generate_passwords "$CURRENT_SEASON"
-if [ "$CURRENT_SEASON" == "Autumn" ]; then
-    generate_passwords "$CURRENT_SEASON_FALL"
-fi
-
-# Determine if we should generate passwords for the previous or next season
+# Generate passwords in order of likelihood based on the current month
 if [ "$MONTH" -eq 3 ] || [ "$MONTH" -eq 6 ] || [ "$MONTH" -eq 9 ] || [ "$MONTH" -eq 12 ]; then
-    # For March, June, September, and December, the previous season is closer
+    # For March, June, September, and December, list the previous season first
     generate_passwords "$PREVIOUS_SEASON"
     if [ "$PREVIOUS_SEASON" == "Autumn" ]; then
         generate_passwords "$PREVIOUS_SEASON_FALL"
     fi
+    generate_passwords "$CURRENT_SEASON"
+    if [ "$CURRENT_SEASON" == "Autumn" ]; then
+        generate_passwords "$CURRENT_SEASON_FALL"
+    fi
 else
-    # For other months, the next season is closer
+    # For other months, list the current season first, then the next season
+    generate_passwords "$CURRENT_SEASON"
+    if [ "$CURRENT_SEASON" == "Autumn" ]; then
+        generate_passwords "$CURRENT_SEASON_FALL"
+    fi
     generate_passwords "$NEXT_SEASON"
     if [ "$NEXT_SEASON" == "Autumn" ]; then
         generate_passwords "$NEXT_SEASON_FALL"
