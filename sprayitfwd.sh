@@ -7,16 +7,24 @@ MIN_PASSWORD_LENGTH=8
 
 # Parse named parameters
 while [ $# -gt 0 ]; do
-  case "$1" in
-    --min-password-length|-m)
-      MIN_PASSWORD_LENGTH="$2"
-      shift 2
-      ;;
-    *)
-      echo "Unknown parameter: $1"
-      exit 1
-      ;;
-  esac
+    case "$1" in
+        --min-password-length|-m)
+            MIN_PASSWORD_LENGTH="$2"
+            shift 2
+            ;;
+        --help|-h)
+            echo "Usage: $0 [options]"
+            echo "Options:"
+            echo "  -m, --min-password-length  Set the minimum password length (default: 8)"
+            echo "  -h, --help                 Display this help message"
+            exit 0
+            ;;
+        *)
+            echo "Unknown parameter: $1"
+            echo "Use -h or --help for usage information."
+            exit 1
+            ;;
+    esac
 done
 
 # Get the current month and year
