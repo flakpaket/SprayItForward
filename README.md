@@ -3,7 +3,7 @@ A shell script to generate a list of passwords to use in password sprays based o
 
 ## Setup
 ```shell
-git clone
+git clone https://github.com/flakpaket/SprayItForward.git
 ```
 Give it execute permissions:
 ```shell
