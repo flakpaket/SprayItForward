@@ -2,9 +2,16 @@
 A shell script to generate a list of passwords to use in password sprays based on common season and year combinations.
 
 ## Setup
+Clone the repo and cd into directory.
 ```shell
 git clone https://github.com/flakpaket/SprayItForward.git
+cd SprayItForward
 ```
+Alternatively, you could use `curl` to get the latest version.
+```shell
+curl -O https://raw.githubusercontent.com/flakpaket/SprayItForward/refs/heads/main/sprayitfwd.sh
+```
+
 Give it execute permissions:
 ```shell
 $ chmod +x sprayitfwd.sh
